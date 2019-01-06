@@ -13,14 +13,16 @@
         <img src="" alt="Barbershop main logo">
       </a>
       <ul class="site-navigation">
-        <li class="site-navifation-item"><a href="">Информация</a></li>
-        <li class="site-navifation-item"><a href="news.html">Новости</a></li>
-        <li class="site-navifation-item"><a href="">Прайс-лист</a></li>
-        <li class="site-navifation-item"><a href="">Магазин</a></li>
-        <li class="site-navifation-item"><a href="">Контакты</a></li>
+        <li class="site-navigation-item"><a href="">Информация</a></li>
+        <li class="site-navigation-item"><a href="news.html">Новости</a></li>
+        <li class="site-navigation-item"><a href="">Прайс-лист</a></li>
+        <li class="site-navigation-item"><a href="shop.html">Магазин</a></li>
+        <li class="site-navigation-item"><a href="">Контакты</a></li>
       </ul>
       <ul class="user-navigation">
-        <li class="user-navigation-item"><a href="">Вход</a></li>
+        <li class="user-navigation-item">
+          <button class="button login-button">Вход</button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -83,7 +85,25 @@
     <section class="appoinment">
       <h2>Записаться</h2>
       <p class="appoinment-info">Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
-      <!--<form action="" method="POST"></form> ADD FORM-->
+      <form class="appoinment-form" action="https:/echo.htmlacademy.ru" method="POST">
+        <p class="appoinment-info">
+          <label for="appoinment-date">Дата</label>
+          <input type="text" id="appoinment-date" placeholder="08.01.2019" name="date">
+        </p>
+        <p class="appoinment-info">
+          <label for="appoinment-time">Время</label>
+          <input type="text" id="appoinment-time" placeholder="10:00" name="time">
+        </p>
+        <p class="appoinment-info">
+          <label for="appoinment-name">Ваше имя</label>
+          <input type="text" id="appoinment-name" placeholder="Алексей Симонов" name="name">
+        </p>
+        <p class="appoinment-info">
+          <label for="appoinment-tel">Телефон</label>
+          <input type="tel" id="appoinment-tel" placeholder="+7 905 561 10 12" name="tel">
+        </p>
+        <button class="button" type="submit">Отправить</button>
+      </form>
     </section>
   </main>
   <footer class="main-footer">
@@ -109,10 +129,30 @@
   <section class="modal login-modal">
     <h2>Личный кабинет</h2>
     <p>Введите пожайлуста свой логин и пароль</p>
-    <!--<form action="" method="POST"></form> ADD FORM-->
+    <form class="login-form" action="https:/echo.htmlacademy.ru" method="POST">
+      <p>
+        <label for="login-login" class="visually-hidden">Логин</label>
+        <input type="text" class="login-icon" id="login-login" name=login placeholder="Логин">
+      </p>
+      <p>
+        <label for="login-password" class="visually-hidden">Пароль</label>
+        <input type="password" class="login-icon" id="login-password" name="password" placeholder="Пароль">
+      </p>
+      <p class="login-reset-remember">
+        <input class="visually-hidden" type="checkbox" name="remember-me" id="login-remember" checked>
+        <label for="login-remember">Запомните меня</label>
+        <a class="login-restore" href="#">Я забыл пароль!</a>
+      </p>
+      <button type="submit">Войти</button>
+    </form>
+    <button class="modal-close" type="button">Закрыть</button>
   </section>
-  <section class="map">
-
+  <section class="modal modal-map">
+    <h2 class="visually-hidden">Как до нас добраться</h2>
+    <p>
+      <img src="img/map.jpg" alt="г. Санкт-Петербург, Б. Конюшенная, д. 19/8" width="766" height="560">
+    </p>
+    <button class="modal-close" type="button">Закрыть</button>
   </section>
 </body>
 </html>
