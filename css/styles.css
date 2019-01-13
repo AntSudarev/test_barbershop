@@ -1,0 +1,181 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "PT Sans Narrow", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background: #000000 url("../img/main-background.jpg") no-repeat top center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.user-navigation,
+.site-navigation {
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+
+  background-color: #000000;
+}
+
+.site-navigation a,
+.user-navigation a {
+  color: #ffffff;
+}
+
+.site-navigation a:hover,
+.user-navigation a:hover,
+.site-navigation a:focus,
+.user-navigation a:focus {
+  background-color: #242424;
+}
+.site-navigation,
+.user-navigation {
+  list-style: none;
+}
+
+.advantages-item {
+  text-align: center;
+  list-style: none;
+}
+
+.advantages-item h3 {
+  font-size: 30px;
+  line-height: 42px;
+}
+.index-columns {
+  color: #000000;
+  background-color: #f8f5f2;
+  background-image: url(../img/main-pattern.jpg);
+  background-repeat: repeat;
+  background-position: 0 0;
+
+}
+
+.index-columns h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.news-item {
+  list-style: none;
+}
+
+.news-item time {
+  text-transform: none;
+}
+.gallery-content {
+  background-color: #e5e5e5;
+  border: 7px solid #ffffff;
+}
+
+.button {
+  font: inherit;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: #000000;
+  border: none;
+  
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  background-color: #663d15;
+
+}
+
+.appoinment-info input {
+  font:inherit;
+  background-color: transparent;
+  border: 2px solid #000000;
+  
+}
+
+.appoinment-info input:focus {
+  border: 2px solid #663d15;
+  
+}
+
+.main-footer {
+  color: #ffffff;
+  background: #222222 url("../img/background-footer.jpg") repeat 0 0;
+}
+
+ .footer-contacts a {
+   color: #ffffff;
+  text-decoration: underline;
+ }
+
+ .footer-contacts a:focus,
+ .footer-contacts a:hover {
+  text-decoration: none;
+}
+
+.footer-social {
+  text-align:center;
+}
+
+.footer-social ul {
+  list-style: none;
+}
+
+.footer-copyright {
+  text-align:center;
+}
+
+.footer-copyright a:hover,
+.footer-copyright a:focus {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.modal {
+  color: #000000;
+  background-color: #f8f5f2;
+  background-image: url(../img/main-pattern.jpg);
+  background-repeat: repeat;
+  background-position: 0 0;
+}
+
+.modal h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.login-form input {
+  font: inherit;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.login-form input:focus {
+  border: 2px solid #663d15;
+}
+
+.login-form .login-checkbox:focus,
+.login-form .login-checkbox:hover {
+  color:  #663d15;
+}
+
+.login-form a {
+  color: #000000;
+  text-decoration: underline;
+
+}
+
+.login-form a:focus,
+.login-form a:hover {
+  text-decoration: none;
+  
+}
