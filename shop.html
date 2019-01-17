@@ -7,7 +7,7 @@
   <title>Borodinsky Barbershop Shop</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="inner-page">
   <header class="main-header">
     <nav class="main-navigation">
       <a href="index.html" class="main-logo">
@@ -243,12 +243,12 @@
         <label for="login-password" class="visually-hidden">Пароль</label>
         <input type="password" class="login-icon" id="login-password" name="password" placeholder="Пароль">
       </p>
-      <p class="login-reset-remember">
-        <input class="visually-hidden" type="checkbox" name="remember-me" id="login-remember" checked>
-        <label for="login-remember">Запомните меня</label>
-        <a class="login-restore" href="#">Я забыл пароль!</a>
+      <p class="login-remember-reset">
+        <input class="checkbox visually-hidden" type="checkbox" name="remember-me" id="login-remember" checked>
+        <label class="login-checkbox" for="login-remember">Запомните меня</label>
       </p>
-      <button type="submit">Войти</button>
+        <a class="login-restore" href="#">Я забыл пароль!</a>
+      <button class="button" type="submit">Войти</button>
     </form>
     <button class="modal-close" type="button">Закрыть</button>
   </section>
