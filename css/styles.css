@@ -22,6 +22,27 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap; 
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .main-navigation {
   font-size: 16px;
   line-height: 20px;
@@ -31,7 +52,41 @@ a {
 
 .site-navigation a,
 .user-navigation a {
+  display: block;
+  padding: 25px 20px;
   color: #ffffff;
+}
+
+.user-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 107px; 
+}
+
+.user-navigation .login-link {
+  position: relative;
+  padding-left: 50px;
+
+}
+
+.user-navigation .login-link::before {
+  content: "";
+
+  position: absolute;
+  top: 27px;
+  left: 23px;
+  background-image: url(../img/login.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.3;
+  width: 16px;
+  height: 16px;
+}
+
+.user-navigation .login-link:hover::before,
+.user-navigation .login-link:active::before,
+.user-navigation .login-link:focus::before {
+  opacity: 1;
 }
 
 .site-navigation a:hover,
@@ -53,34 +108,112 @@ a {
 .advantages-item h3 {
   font-size: 30px;
   line-height: 42px;
+  position: relative;
+  margin: 0;
+  margin-bottom: 60px;
 }
+
+.advantages-item h3::after {
+  position: absolute;
+  content: "";
+  background-image: url("../img/Shape.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 20px;
+  height: 20px;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -10px;
+  transform: rotate(45deg);
+}
+
+.advantages-item p {
+  margin: 0 10px;
+
+}
+
 .index-columns {
   color: #000000;
   background-color: #f8f5f2;
-  background-image: url(../img/main-pattern.jpg);
-  background-repeat: repeat;
-  background-position: 0 0;
+  background-image: 
+    url(../img/shadow.png), 
+    url(../img/main-pattern.jpg);
+  background-repeat: no-repeat, repeat;
+  background-position: 50% 50%, 0 0;
 
 }
 
 .index-columns h2 {
   font-size: 30px;
   line-height: 42px;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.news-list {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+  list-style: none;
+  
 }
 
 .news-item {
-  list-style: none;
+  margin-bottom: 25px;
 }
 
 .news-item time {
   text-transform: none;
 }
+
+.gallery-container {
+  position: relative;
+  height: 260px;
+}
+
+.button-gallery-back,
+.button-gallery-next {
+  position: absolute;
+}
+
+.gallery-button {
+  box-sizing: border-box;
+  width: 140px;
+}
+
+.button-gallery-back {
+  bottom: 0px;
+  left: 0px;
+}
+
+.button[disabled] {
+  background-color: #b0aeac;
+}
+
+.button[disabled]:hover {
+  background-color: #b0aeac;
+}
+
+.button-gallery-next {
+  bottom: 0;
+  right: 0;
+}
+
 .gallery-content {
+  margin: 0;
   background-color: #e5e5e5;
   border: 7px solid #ffffff;
+  height: 164px;
+}
+
+.gallery-content img {
+  height: 164px;
+  width: 286px;
 }
 
 .button {
+  padding: 10px 30px;
+  display: inline-block;
   font: inherit;
   color: #ffffff;
   text-align: center;
@@ -91,6 +224,15 @@ a {
   
 }
 
+.contacts p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.contacts .button {
+  margin-right: 16px;
+}
+
 .button:hover,
 .button:active,
 .button:focus {
@@ -98,11 +240,45 @@ a {
 
 }
 
+.appoinment-info {
+  margin: 0;
+  margin-bottom: 15px;
+  width: 140px;
+}
+
+.appoinment-info-title {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.appoinment-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.appoinment-info label {
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .appoinment-info input {
   font:inherit;
+  box-sizing: border-box;
   background-color: transparent;
   border: 2px solid #000000;
+  width: 140px;
+  padding: 10px 15px;
   
+}
+
+.appoinment-button {
+  width: 100%;
+  margin-right: 0;
+
 }
 
 .appoinment-info input:focus {
@@ -130,11 +306,43 @@ a {
 }
 
 .footer-social ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
   list-style: none;
 }
 
-.footer-copyright {
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 43px;
+  height: 43px;
+  background-color: #000000;
+}
+
+.social-button:hover,
+.social-button:focus {
+  background-color: #ffffff;
+  fill: #000000;
+}
+
+.social-button:hover path,
+.social-button:focus path{
+  fill: #000000;
+}
+
+.footer-copyright b {
+  display: block;
   text-align:center;
+  margin-bottom: 15px;
+}
+
+.link-html-academy {
+  padding: 19px 29px;
 }
 
 .footer-copyright a:hover,
@@ -288,6 +496,8 @@ a {
    margin: 0;
    padding: 0;
    width: 620px;
+   display: flex;
+   flex-wrap: wrap;
 
 }
 
@@ -320,18 +530,8 @@ a {
   width: 380px;
 }
 
-.news-list {
-  margin: 0;
-  padding: 0;
-}
-
 .gallery {
   width: 300px;
-}
-
-.gallery-content {
-  padding: 0;
-  margin: 0;
 }
 
 .contacts {
@@ -362,12 +562,6 @@ a {
 
 .footer-social {
   width: 145px;
-  margin: 0;
-  padding: 0;
-
-}
-
-.footer-social ul{
   margin: 0;
   padding: 0;
 
