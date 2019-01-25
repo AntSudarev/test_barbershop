@@ -412,7 +412,7 @@ input[type="radio"].visually-hidden {
   width: 8px;
   height: 8px;
   top: 50%;
-  left: 75%;
+  right: 18px;
   margin-top: -4px;
   margin-left: -4px;
   background-color: #000000;
@@ -513,10 +513,6 @@ input[type="radio"].visually-hidden {
   border-radius: 50%;
 }
 
-
-
-
-
 .catalog-item a {
   display: flex;
   flex-direction: column;
@@ -598,7 +594,30 @@ input[type="radio"].visually-hidden {
 }
 
 .item-detalization {
+  display: flex;
   list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.item-view-full {
+  box-sizing: border-box;
+  line-height: 0;
+  margin-bottom: 21px;
+}
+
+.item-detalization li {
+  line-height: 0;
+}
+
+.item-detalization li:not(:first-child) {
+  margin-left: 20px;
+}
+
+.item-detalization img {
+  width: 140px;
+  height: 149px;
 }
 
 .price-table {
@@ -628,22 +647,67 @@ input[type="radio"].visually-hidden {
   list-style: none;
 }
 
+.item-info {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 33px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .art {
   color: #b8b7b7;
-  text-align: right;
+}
+
+.description {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
 }
 
 .item-view-full {
   box-shadow: 0 0 10px 2px rgba(0 , 0, 0, 0.2);
 }
 
-.item-detalization li:nth-child(n) {
+.item-detalization li {
   box-shadow: 0 0 10px 2px rgba(0 , 0, 0, 0.2);
 }
 
+.buy-item {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 65px;
+}
+
 .buy-item b{
+  width: 109px;
   text-align:center;
   background-color: #e5e5e5;
+  padding-top: 11px;
+}
+
+.buy-item .button {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  width: 76px;
+}
+
+.item-description h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.compose-list {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  list-style: url(../img/shapeListMarker.svg);
+}
+
+.compose-item {
+  padding-left: 15px;
 }
 
 /* layer */
@@ -818,11 +882,6 @@ input[type="radio"].visually-hidden {
 
 .item-view {
   width: 460px;
-}
-
-.item-detalization {
-  padding: 0;
-  margin: 0;
 }
 
 .item-description {
