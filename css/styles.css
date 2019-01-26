@@ -513,6 +513,35 @@ input[type="radio"].visually-hidden {
   border-radius: 50%;
 }
 
+input[type="radio"]:disabled + label,
+input[type="checkbox"]:disabled + label {
+  color: #b2b0ae;
+  cursor: auto;
+  
+}
+
+input[type="radio"]:disabled + label::after,
+input[type="checkbox"]:disabled + label::after,
+input[type="radio"]:disabled + label::before,
+input[type="checkbox"]:disabled + label::before {
+  border-color: #b2b0ae;
+  cursor: auto;
+}
+
+input[type="radio"]:not(:disabled) + label:hover::after,
+input[type="checkbox"]:not(:disabled) + label:hover::after,
+input[type="radio"]:not(:disabled) + label:hover::before,
+input[type="checkbox"]:not(:disabled) + label:hover::before {
+  border-color: #663d15;
+  cursor: auto;
+}
+input[type="radio"]:not(:disabled) + label:hover,
+input[type="checkbox"]:not(:disabled) + label:hover,
+input[type="radio"]:not(:disabled) + label:hover,
+input[type="checkbox"]:not(:disabled) + label:hover {
+  color: #663d15;
+}
+
 .catalog-item a {
   display: flex;
   flex-direction: column;
@@ -575,6 +604,10 @@ input[type="radio"].visually-hidden {
   margin-right: 7px;
 }
 
+.pagination-item a:hover:not(.current-pagination-item) {
+  background-color: #663d15;
+}
+
 .pagination-item:last-child {
   margin-right: 0px;
 }
@@ -582,13 +615,13 @@ input[type="radio"].visually-hidden {
 .pagination-list a {
   display: block;
   text-align: center;
-  
+  border: 2px solid #000000;
   color: #ffffff;
   background-color: #000000;
   padding: 10px 19px;
 }
 
-.current-pagination-item a {
+a.current-pagination-item  {
   color: #000000;
   background-color: #ffffff;
 }
@@ -685,7 +718,7 @@ input[type="radio"].visually-hidden {
   width: 109px;
   text-align:center;
   background-color: #e5e5e5;
-  padding-top: 11px;
+  padding-top: 1px;
 }
 
 .buy-item .button {
