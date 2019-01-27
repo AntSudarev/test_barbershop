@@ -2,7 +2,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-
   font-family: "PT Sans Narrow", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
@@ -87,6 +86,7 @@ input[type="radio"].visually-hidden {
 .user-navigation .login-link:active::before,
 .user-navigation .login-link:focus::before {
   opacity: 1;
+  transition-duration: 1s;
 }
 
 .site-navigation a:hover,
@@ -94,10 +94,33 @@ input[type="radio"].visually-hidden {
 .site-navigation a:focus,
 .user-navigation a:focus {
   background-color: #242424;
+  transition-duration: 1s;
 }
 .site-navigation,
 .user-navigation {
   list-style: none;
+}
+
+.navigation-item-current {
+  position: relative;
+}
+
+.navigation-item-current::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  left: 20px;
+  height: 5px;
+  background-color: #ffffff;
+}
+
+/*.navigation-item-current a:not([href]) {
+  background-color: #000000;
+}*/
+
+.navigation-item-current a[href] {
+  background-color: #242424;
 }
 
 .advantages-item {
@@ -110,7 +133,7 @@ input[type="radio"].visually-hidden {
   line-height: 42px;
   position: relative;
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .advantages-item h3::after {
@@ -121,7 +144,7 @@ input[type="radio"].visually-hidden {
   background-position: 0 0;
   width: 20px;
   height: 20px;
-  bottom: -30px;
+  bottom: -50px;
   left: 50%;
   margin-left: -10px;
   transform: rotate(45deg);
@@ -237,6 +260,7 @@ input[type="radio"].visually-hidden {
 .button:active,
 .button:focus {
   background-color: #663d15;
+  transition-duration: 0.5s;
 
 }
 
@@ -349,46 +373,6 @@ input[type="radio"].visually-hidden {
 .footer-copyright a:focus {
   color: #000000;
   background-color: #ffffff;
-}
-
-.modal {
-  color: #000000;
-  background-color: #f8f5f2;
-  background-image: url(../img/main-pattern.jpg);
-  background-repeat: repeat;
-  background-position: 0 0;
-}
-
-.modal h2 {
-  font-size: 30px;
-  line-height: 42px;
-}
-
-.login-form input {
-  font: inherit;
-  color: #000000;
-  text-transform: uppercase;
-}
-
-.login-form input:focus {
-  border: 2px solid #663d15;
-}
-
-.login-form .login-checkbox:focus,
-.login-form .login-checkbox:hover {
-  color:  #663d15;
-}
-
-.login-form a {
-  color: #000000;
-  text-decoration: underline;
-
-}
-
-.login-form a:focus,
-.login-form a:hover {
-  text-decoration: none;
-  
 }
 
 .breadcrumbs {
@@ -606,6 +590,7 @@ input[type="checkbox"]:not(:disabled) + label:hover {
 
 .pagination-item a:hover:not(.current-pagination-item) {
   background-color: #663d15;
+  transition-duration: 1s;
 }
 
 .pagination-item:last-child {
@@ -651,29 +636,6 @@ a.current-pagination-item  {
 .item-detalization img {
   width: 140px;
   height: 149px;
-}
-
-.price-table {
-  border-collapse: collapse;
-}
-
-.price-table td {
-  border: 2px solid #000000;
-  text-align:center;
-  width: 230px;
-  padding: 10px;
-}
-
-.price-table td:first-child {
-  text-align: left;
-}
-
-.price-table caption {
-  font-size: 24px;
-  line-height: 30px;
-  text-align: left;
-  width: 180px;
-  padding-bottom: 35px;
 }
 
 .info-list {
@@ -896,6 +858,7 @@ a.current-pagination-item  {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 45px;
+  width: 1000px;
 }
 
 .catalog-item {
@@ -920,57 +883,338 @@ a.current-pagination-item  {
 .item-description {
   width: 390px;
 }
-
-.price-lead {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 70px;
-  font-size: 48px;
-  line-height: 48px;
+.inner-content {
+  margin-bottom: 75px;
 }
 
-.used-resourses {
+.inner-content h2 {
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 60px;
   font-size: 24px;
   line-height: 30px;
-  display: block;
-  margin-bottom: 35px;
+}
+
+.inner-content h3 {
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  font-size: 20px;
+  line-height: 24 px;
+}
+
+.inner-content h2 + h3 {
+  margin-top: 30px;
+}
+
+.inner-content p {
+  margin: 14px 0;
 }
 
 .producer-list {
   padding: 0;
+  padding-left: 15px;
   margin: 0;
-  list-style: none;
+  list-style: url(../img/shapeListMarker.svg);
 }
 
 .producer-item {
   margin-bottom: 15px;
+  padding-left: 10px;
 }
 
 .producer-item:last-child {
   margin-bottom: 0;
 }
 
-.price-columns {
+.inner-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table-1 td {
+  border: 2px solid #000000;
+  text-align:center;
+  width: 50%;
+  padding: 10px;
+}
+
+.inner-content td:first-child {
+  text-align: left;
+}
+
+.inner-content .price-lead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+}
+
+.price-lead::before {
+  margin-right: 25px;
+}
+
+.price-lead::after {
+  margin-left:25px;
+}
+
+.price-lead::before,
+.price-lead::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  background-color: #000000;
+}
+
+.inner-columns {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 65px;
+  flex-wrap: wrap;
+  margin: 60px 0;
 }
 
-.resourses {
-  width: 250px;
-}
-
-.price-table {
+.inner-right-column,
+.inner-left-column {
   width: 460px;
 }
-
-.info-list {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
+.inner-right-column *:first-child,
+.inner-left-column *:first-child {
+  margin-top: 0;
 }
 
-.info-item {
-  width: 380px;
+.inner-right-column *:last-child,
+.inner-left-column *:last-child {
+  margin-bottom: 0;
+}
+
+.inner-columns > h2:first-child {
+  width: 100%;
+  margin-top: 0;
+}
+
+.short-text {
+  padding-right: 80px;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  color: #000000;
+  background-color: #f8f5f2;
+  background-image: url(../img/main-pattern.jpg);
+  background-repeat: repeat;
+  background-position: 0 0;
+  z-index: 2;
+}
+
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0 , 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.modal h2 {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.login-modal {
+  top:50%;
+  left: 50%;
+  width: 300px; 
+  padding: 60px 80px;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.75);
+  transform: translate(-50%, -50%);
+}
+
+.login-modal .description {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.login-modal .login-remember-reset {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
+.login-modal p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 9px;
+}
+
+.login-form input::placeholder {
+  text-transform: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: -34px;
+  width: 22px;
+  height: 22px;
+  font-size: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  border-radius: 3px;
+  width: 22px;
+  height: 4px;
+  background-color: #d0d0d0;
+  top: 9px;
+  left: 0px;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+
+.login-form input::placeholder {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.login-form input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  padding-right: 40px;
+  font: inherit;
+  color: #000000;
+  text-transform: none;
+  border: 2px solid #000000;
+  
+}
+
+input:focus {
+  outline: 2px solid #663d15;
+}
+
+.login-icon {
+  background-image: url("../img/user.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+.login-password {
+  background-image: url("../img/lock.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+.login-checkbox {
+  padding-left: 32px;
+  cursor: pointer;
+}
+
+.remember-checkbox {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  
+}
+
+.login-checkbox input[type="checkbox"]:focus + .remember-checkbox {
+  border-color: #663d15;
+  outline: 5px auto -webkit-focus-ring-color;
+  
+}
+
+.login-checkbox input[type="checkbox"]:checked + .remember-checkbox::before,
+.login-checkbox input[type="checkbox"]:checked + .remember-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 16px;
+  height: 2px;
+  background-color: #000000;
+}
+
+.login-checkbox input[type="checkbox"]:checked + .remember-checkbox::before {
+  transform: rotate(45deg);
+}
+
+.login-checkbox input[type="checkbox"]:checked + .remember-checkbox::after {
+  transform: rotate(-45deg);
+}
+
+.login-checkbox:focus,
+.login-checkbox:hover {
+  color:  #663d15;
+}
+
+.login-checkbox:focus .remember-checkbox,
+.login-checkbox:hover .remember-checkbox {
+  border-color: #663d15;
+}
+
+
+.login-form a {
+  color: #000000;
+  text-decoration: underline;
+
+}
+
+.login-form a:focus,
+.login-form a:hover {
+  text-decoration: none;
+  
+}
+
+.login-button {
+  width: 100%;
+  margin-right: 0;
+}
+
+.modal-map {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 7px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.75);
+  width: 768;
+}
+
+.modal-map img {
+  width: 766px;
+  height: 560px;
+}
+
+.modal-map p {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
